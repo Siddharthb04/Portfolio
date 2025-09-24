@@ -75,21 +75,24 @@ body {
     height: 100vh;
     justify-content:space-between;
     align-items: center;
-    margin-top: 1vh ;
+    padding-top: 12rem;
+    gap: 4rem;
+}
+
+.home-content {
+    width: 40%;
 }
 
 .home-img {
-    margin-top: 80px;
-    margin-left: 100px;
-    width: 80%;
+    width: 60%;
     height: 70%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     }
 
 .home-img img {
-   margin-left: 300px;
+   margin-left: 0;
 }    
 .h3 {
     font-size: 28px;
@@ -102,7 +105,6 @@ body {
    
 }  
 .home-content h1 {
-    width: 200px;
     font-size: 4.2rem;
     font-weight: 700;
    
@@ -124,12 +126,13 @@ border-radius: 50%;
     font-size: 50px;
 }
 .Sid{
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    object-fit: cover; /* Cover the container */
-    filter: drop-shadow(0 0 10px white); /* Optional effect */
-    margin-bottom: 30px;
+    width: min(32vw, 442px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 60%;
+    object-fit: cover;
+    filter: drop-shadow(0 0 10px white);
+    margin-top: 1.2rem;
 }
 .home-sci a {
     display: inline-flex;
@@ -613,7 +616,7 @@ border-radius: 50%;
     }
     
     .home {
-        padding: 0 4%;
+        padding: 12rem 4% 0 4%;
     }
     
     .home-img img {
@@ -631,7 +634,7 @@ border-radius: 50%;
     }
     
     .home {
-        padding: 0 4%;
+        padding: 12rem 4% 0 4%;
     }
     
     .home-img img {
@@ -643,6 +646,7 @@ border-radius: 50%;
     .home {
         flex-direction: column;
         text-align: center;
+        padding-top: 14rem;
     }
     
     .home-content {
@@ -840,5 +844,46 @@ border-radius: 50%;
     .about-text p {
         font-size: 1.6rem;
     }
+}
+
+@media (max-width: 768px) {
+    .Sid {
+        margin-top: 1rem;
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.hero-line {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: heroFadeUp 600ms ease-out forwards;
+}
+
+.hero-line-2 {
+    animation-delay: 150ms;
+}
+
+.hero-name {
+    background: linear-gradient(90deg, #00e5ff, #00ff9d, #00e5ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2.5s linear infinite;
+    display: inline-block;
+}
+
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.hero-name {
+    background-size: 200% auto;
 }
 
